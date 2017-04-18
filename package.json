@@ -1,0 +1,33 @@
+{
+  "name": "app-boilerplate-react",
+  "version": "0.1.0",
+  "description": "A foundation with the best developer experience to get you started developing React DeskPro Apps Edit",
+  "main": "lib/main/javascript/index.js",
+  "scripts": {
+    "dev": "dpat server .",
+    "test": "dpat test ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeskproApps/app-boilerplate-react.git"
+  },
+  "keywords": [
+    "deskpro",
+    "react-boilerplate"
+  ],
+  "author": "Deskpro",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/DeskproApps/app-boilerplate-react/issues"
+  },
+  "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
+  "devDependencies": {
+    "deskproapps-sdk-react": "file:../deskproapps-sdk-react",
+    "dpat": "file:../dpat",
+
+    "react": "15.5.3",
+    "react-dom": "15.5.3",
+
+    "semantic-ui-react": "0.67.2"
+  }
+}
