@@ -1,19 +1,15 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const ChunkManifestPlugin = require('chunk-manifest-webpack-plugin');
-const WebpackChunkHash = require('webpack-chunk-hash');
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const CopyAssets = require('./CopyAssets');
 
+const CopyAssets = require('./CopyAssets');
+const BuildUtils = require('./BuildUtils');
 
 const PROJECT_ROOT_PATH = path.resolve(__dirname, '../../');
 const ASSET_PATH = 'assets';
 
-const PACKAGE_NAMES='deskpro+apps react';
-const artifactName = (baseName) => PACKAGE_NAMES.replace(/\+/, '').split(' ').concat([baseName]).join('-');
-
-const copyWebpackPlugin = CopyAssets.copyWebpackPlugin(null);
+const copyWebpackPlugin = CopyAssets.copyWebpackPlugin('target');
 const extractCssPlugin = new ExtractTextPlugin({ filename: '[name].css', publicPath: `/${ASSET_PATH}/`, allChunks: true });
 
 const configParts = [];
@@ -24,7 +20,7 @@ configParts.push({
         hot: true,
         historyApiFallback: true,
         port: 31080,
-        publicPath: `/${ASSET_PATH}/`,
+        publicPath: ['/', ASSET_PATH, '/'].join(''),
         watchContentBase: true
     },
     devtool: 'inline-source-map',
@@ -56,10 +52,10 @@ configParts.push({
         ],
     },
     output: {
-        chunkFilename: `${ASSET_PATH}/[name].js`,
-        filename: '[name].js',
+        chunkFilename: `${ASSET_PATH}/${BuildUtils.artifactName('[name].js')}`,
+        filename: BuildUtils.artifactName('[name].js'),
         path: path.resolve(PROJECT_ROOT_PATH, 'target'),
-        publicPath: `/${ASSET_PATH}/`
+        publicPath: ['/', ASSET_PATH, '/'].join('')
     },
     plugins: [
         extractCssPlugin,
@@ -74,7 +70,6 @@ configParts.push({
     resolve: {
         extensions: ['*', '.js', '.jsx', '.scss', '.css']
     },
-    // stats: 'minimal',
     node: { fs: 'empty' },
     bail: true
 });
