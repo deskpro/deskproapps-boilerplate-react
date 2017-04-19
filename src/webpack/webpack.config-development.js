@@ -2,6 +2,7 @@ const path = require('path');
 const webpack = require('webpack');
 
 const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const WriteFilePlugin = require('write-file-webpack-plugin');
 
 const CopyAssets = require('./CopyAssets');
 const BuildUtils = require('./BuildUtils');
@@ -23,10 +24,15 @@ configParts.push({
         publicPath: ['/', ASSET_PATH, '/'].join(''),
         watchContentBase: true
     },
+    externals: {
+        'react': 'React',
+        'react-dom': 'ReactDOM',
+        'deskproapps-sdk-react': 'DeskproAppsSDKReact'
+    },
     devtool: 'inline-source-map',
     entry: {
         main: [
-            `webpack-dev-server/client?http://localhost:3100`,
+            `webpack-dev-server/client?http://localhost:31080`,
             path.resolve(PROJECT_ROOT_PATH, 'src/webpack/entrypoint.js')
         ],
         vendor: ['react', 'react-dom', 'semantic-ui-react', 'deskproapps-sdk-react']
@@ -63,6 +69,11 @@ configParts.push({
         new webpack.optimize.CommonsChunkPlugin({ name: ['vendor'], minChunks: Infinity }),
         new webpack.NamedModulesPlugin(),
         copyWebpackPlugin,
+      new WriteFilePlugin({
+        // Write only files that have ".css" extension.
+        test: /\html\/|assets\/|dists\//,
+        useHashIndex: false
+      }),
 
         new webpack.HotModuleReplacementPlugin(),
         new webpack.NoEmitOnErrorsPlugin(),
