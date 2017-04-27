@@ -1,7 +1,7 @@
 {
-  "name": "app-boilerplate-react",
+  "name": "@deskproapps/app-boilerplate-react",
   "version": "0.0.0",
-  "description": "A foundation with the best developer experience to get you started developing React DeskPro Apps Edit",
+  "description": "A foundation to get you started developing React DeskPro Apps with the best developer experience ",
   "main": "lib/main/javascript/index.js",
   "scripts": {
     "release": "npm_bump",
@@ -24,12 +24,9 @@
   },
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "devDependencies": {
-    "deskproapps-sdk-react": "file:../deskproapps-sdk-react",
-    "dpat": "file:../dpat",
-
+    "@deskproapps/deskproapps-sdk-react": "0.1.3",
     "react": "15.5.3",
     "react-dom": "15.5.3",
-
     "semantic-ui-react": "0.67.2"
   }
 }
