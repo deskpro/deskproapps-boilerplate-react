@@ -1,88 +1,95 @@
 const path = require('path');
 const webpack = require('webpack');
 
-const ExtractTextPlugin = require('extract-text-webpack-plugin');
-const WriteFilePlugin = require('write-file-webpack-plugin');
+const ExtractTextPlugin = require("extract-text-webpack-plugin");
+const WriteFilePlugin = require("write-file-webpack-plugin");
 
-const CopyAssets = require('./CopyAssets');
-const BuildUtils = require('./BuildUtils');
+module.exports = function (env) {
 
-const PROJECT_ROOT_PATH = path.resolve(__dirname, '../../');
-const ASSET_PATH = 'assets';
+  const PROJECT_ROOT_PATH = env && env.DP_PROJECT_ROOT ? env.DP_PROJECT_ROOT : path.resolve(__dirname, '../../');
+  const ASSET_PATH = 'assets';
 
-const copyWebpackPlugin = CopyAssets.copyWebpackPlugin('target');
-const extractCssPlugin = new ExtractTextPlugin({ filename: '[name].css', publicPath: `/${ASSET_PATH}/`, allChunks: true });
+  const artifactName = require('./BuildUtils').artifactName(PROJECT_ROOT_PATH);
+  const copyWebpackPlugin = require('./CopyAssets').copyWebpackPlugin(PROJECT_ROOT_PATH)('target');
+  const extractCssPlugin = new ExtractTextPlugin({
+    filename: '[name].css',
+    publicPath: `/${ASSET_PATH}/`,
+    allChunks: true
+  });
 
-const configParts = [];
-configParts.push({
+  const configParts = [{}];
+  configParts.push({
     devServer: {
-        contentBase: path.resolve(PROJECT_ROOT_PATH, 'target'),
-        clientLogLevel: 'warning',
-        hot: true,
-        historyApiFallback: true,
-        port: 31080,
-        publicPath: ['/', ASSET_PATH, '/'].join(''),
-        watchContentBase: true
+      contentBase: path.resolve(PROJECT_ROOT_PATH, 'target'),
+      clientLogLevel: 'warning',
+      hot: true,
+      historyApiFallback: true,
+      port: 31080,
+      publicPath: ['/', ASSET_PATH, '/'].join(''),
+      watchContentBase: true,
+      headers : {
+        'Access-Control-Allow-Origin': '*',
+        'Access-Control-Allow-Methods': 'GET, POST, PATCH, PUT, DELETE, CONNECT, OPTIONS, TRACE',
+        'Access-Control-Allow-Headers': 'Origin, X-Agent-Request'
+      }
     },
     externals: {
-        'react': 'React',
-        'react-dom': 'ReactDOM',
-        'deskproapps-sdk-react': 'DeskproAppsSDKReact'
+      'react': 'React',
+      'react-dom': 'ReactDOM',
+      'deskproapps-sdk-react': 'DeskproAppsSDKReact'
     },
     devtool: 'inline-source-map',
     entry: {
-        main: [
-            `webpack-dev-server/client?http://localhost:31080`,
-            path.resolve(PROJECT_ROOT_PATH, 'src/webpack/entrypoint.js')
-        ],
-        vendor: ['react', 'react-dom', 'semantic-ui-react', 'deskproapps-sdk-react']
+      main: [
+        `webpack-dev-server/client?http://localhost:31080`,
+        path.resolve(PROJECT_ROOT_PATH, 'src/webpack/entrypoint.js')
+      ],
+      vendor: ['react', 'react-dom', 'semantic-ui-react', 'deskproapps-sdk-react']
     },
     module: {
-        loaders: [
-            {
-                test: /\.jsx?$/,
-                loader: 'babel-loader',
-                include: [
-                    path.resolve(PROJECT_ROOT_PATH, 'src/main/javascript'),
-                ]
-            },
-            {
-                test: /\.css$/,
-                use: extractCssPlugin.extract({ use: ['style-loader', 'css-loader'] })
-            },
-            {
-                include: [ path.resolve(PROJECT_ROOT_PATH, 'src/main/sass') ],
-                loader: extractCssPlugin.extract({ use: ['css-loader', 'sass-loader'] }),
-                test: /\.scss$/
-            }
-        ],
+      loaders: [
+        {
+          test: /\.jsx?$/,
+          loader: 'babel-loader',
+          include: [path.resolve(PROJECT_ROOT_PATH, 'src/main/javascript'),]
+        },
+        {
+          test: /\.css$/,
+          use: extractCssPlugin.extract({use: ['style-loader', 'css-loader']})
+        },
+        {
+          include: [path.resolve(PROJECT_ROOT_PATH, 'src/main/sass')],
+          loader: extractCssPlugin.extract({use: ['css-loader', 'sass-loader']}),
+          test: /\.scss$/
+        }
+      ],
     },
     output: {
-        chunkFilename: `${ASSET_PATH}/${BuildUtils.artifactName('[name].js')}`,
-        filename: BuildUtils.artifactName('[name].js'),
-        path: path.resolve(PROJECT_ROOT_PATH, 'target'),
-        publicPath: ['/', ASSET_PATH, '/'].join('')
+      chunkFilename: `${ASSET_PATH}/${artifactName('[name].js')}`,
+      filename: artifactName('[name].js'),
+      path: path.resolve(PROJECT_ROOT_PATH, 'target'),
+      publicPath: ['/', ASSET_PATH, '/'].join('')
     },
     plugins: [
-        extractCssPlugin,
+      extractCssPlugin,
 
-        new webpack.optimize.CommonsChunkPlugin({ name: ['vendor'], minChunks: Infinity }),
-        new webpack.NamedModulesPlugin(),
-        copyWebpackPlugin,
+      new webpack.optimize.CommonsChunkPlugin({name: ['vendor'], minChunks: Infinity}),
+      new webpack.NamedModulesPlugin(),
+      copyWebpackPlugin,
       new WriteFilePlugin({
-        // Write only files that have ".css" extension.
-        test: /\html\/|assets\/|dists\//,
+        test: /\html\/|assets\/|dists\/|manifest\.json/,
         useHashIndex: false
       }),
 
-        new webpack.HotModuleReplacementPlugin(),
-        new webpack.NoEmitOnErrorsPlugin(),
+      new webpack.HotModuleReplacementPlugin(),
+      new webpack.NoEmitOnErrorsPlugin(),
     ],
     resolve: {
-        extensions: ['*', '.js', '.jsx', '.scss', '.css']
+      extensions: ['*', '.js', '.jsx', '.scss', '.css']
     },
-    node: { fs: 'empty' },
+    node: {fs: 'empty'},
     bail: true
-});
+  });
 
-module.exports = Object.assign.apply(Object, configParts);
+  return Object.assign.apply(Object, configParts);
+};

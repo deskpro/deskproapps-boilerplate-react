@@ -3,8 +3,6 @@
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const path = require('path');
 
-const PROJECT_ROOT_PATH = path.resolve(__dirname, '../../');
-
 /**
  * @param {String} destination
  * @return {Function}
@@ -44,7 +42,7 @@ function createTransformHtml(destination) {
 /**
  * @return {[*,*]}
  */
-function getCopyPatterns(destination)
+function getCopyPatterns(destination, projectRoot)
 {
   if (-1 === ['dist','target'].indexOf(destination)) {
     throw new Error('destination must one of: dist, target');
@@ -52,14 +50,24 @@ function getCopyPatterns(destination)
   // patterns for copying static files from the app's source
   const patterns = [
     {
-      from: path.resolve(PROJECT_ROOT_PATH, 'src', 'main', 'html'),
-      to: path.join(PROJECT_ROOT_PATH, destination, 'html'),
+      from: path.resolve(projectRoot, 'src', 'main', 'html'),
+      to: path.join(projectRoot, destination, 'html'),
       force: true,
       transform: createTransformHtml(destination)
     },
     {
-      from: path.resolve(PROJECT_ROOT_PATH, 'src', 'main', 'resources'),
-      to: path.join(PROJECT_ROOT_PATH, destination, 'assets'),
+      from: path.resolve(projectRoot, 'src', 'main', 'resources'),
+      to: path.join(projectRoot, destination, 'assets'),
+      force: true
+    },
+    {
+      from: path.resolve(projectRoot, 'src', 'main', 'docs', 'README.md'),
+      to: path.join(projectRoot, destination, 'README.md'),
+      force: true
+    },
+    {
+      from: path.resolve(projectRoot, 'manifest.json'),
+      to: path.join(projectRoot, destination, 'manifest.json'),
       force: true
     }
   ];
@@ -69,18 +77,18 @@ function getCopyPatterns(destination)
   if (destination == 'target') {
     patternsForTarget = [
       {
-        from: path.resolve(PROJECT_ROOT_PATH, 'node_modules', 'deskproapps-sdk-react', 'dist', 'deskproapps-sdk-react.js'),
-        to: path.join(PROJECT_ROOT_PATH, 'target', 'assets', 'deskproapps-sdk-react.js'),
+        from: path.resolve(projectRoot, 'node_modules', 'deskproapps-sdk-react', 'dist', 'deskproapps-sdk-react.js'),
+        to: path.join(projectRoot, 'target', 'assets', 'deskproapps-sdk-react.js'),
         force: true
       },
       {
-        from: path.resolve(PROJECT_ROOT_PATH, 'node_modules', 'react', 'dist', 'react.js'),
-        to: path.join(PROJECT_ROOT_PATH, 'target', 'assets', 'react.js'),
+        from: path.resolve(projectRoot, 'node_modules', 'react', 'dist', 'react.js'),
+        to: path.join(projectRoot, 'target', 'assets', 'react.js'),
         force: true
       },
       {
-        from: path.resolve(PROJECT_ROOT_PATH, 'node_modules', 'react-dom', 'dist', 'react-dom.js'),
-        to: path.join(PROJECT_ROOT_PATH, 'target', 'assets', 'react-dom.js'),
+        from: path.resolve(projectRoot, 'node_modules', 'react-dom', 'dist', 'react-dom.js'),
+        to: path.join(projectRoot, 'target', 'assets', 'react-dom.js'),
         force: true
       }
     ];
@@ -108,9 +116,12 @@ function createPlugin(copyPatterns)
     return new CopyWebpackPlugin(commands, options);
 }
 
-
-
 module.exports = {
     getCopyCommands: getCopyPatterns,
-    copyWebpackPlugin: createPlugin
+    copyWebpackPlugin: function (projectDir) {
+      return function (destination) {
+        const copyPatterns = getCopyPatterns(destination, projectDir);
+        return createPlugin(copyPatterns);
+      }
+    }
 };

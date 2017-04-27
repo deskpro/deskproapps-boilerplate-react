@@ -1,7 +1,8 @@
-const PACKAGE_NAMES = require('../../package.json').name;
+"use strict";
+const path = require('path');
 
-function artifactName(baseName) {
-  const nameParts = PACKAGE_NAMES.replace(/\+/, '').split(' ');
+function artifactName(projectName, baseName) {
+  const nameParts = projectName.replace(/\+/, '').split(' ');
   if (baseName && baseName.charAt(0) !== '.') {
     nameParts.push(baseName);
   }
@@ -14,5 +15,13 @@ function artifactName(baseName) {
 }
 
 module.exports = {
-  artifactName: artifactName
+  artifactName: function (projectDir) {
+    "use strict";
+    const packageJsonPath = path.resolve(projectDir, 'package.json');
+    const projectName = require(packageJsonPath).name;
+
+    return function (baseName) {
+      return artifactName(projectName, baseName);
+    }
+  }
 };
