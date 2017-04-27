@@ -4,7 +4,9 @@
   "description": "A foundation with the best developer experience to get you started developing React DeskPro Apps Edit",
   "main": "lib/main/javascript/index.js",
   "scripts": {
+    "release": "npm_bump",
     "dev": "dpat server .",
+    "package": "dpat package .",
     "test": "dpat test ."
   },
   "repository": {
