@@ -1,6 +1,6 @@
 {
   "name": "app-boilerplate-react",
-  "version": "0.1.0",
+  "version": "0.0.0",
   "description": "A foundation with the best developer experience to get you started developing React DeskPro Apps Edit",
   "main": "lib/main/javascript/index.js",
   "scripts": {
