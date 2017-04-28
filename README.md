@@ -29,7 +29,9 @@ However some things are not fully automated so you also need to do some of the t
     
 ### Start the development server    
     
-    dpat server <project-name>
+In your project folder run    
+    
+    dpat server .
 
 You can also give **dpat** the full path to your project folder 
 
