@@ -1,6 +1,6 @@
 {
   "name": "@deskproapps/app-boilerplate-react",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "A foundation to get you started developing React DeskPro Apps with the best developer experience ",
   "main": "lib/main/javascript/index.js",
   "scripts": {
