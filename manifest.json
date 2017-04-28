@@ -1,7 +1,6 @@
 {
   "name": "Your app name",
   "description": "A short description that supports **Markdown**",
-  "url": "http://my-app.com/",
 
   "author": {
     "name": "John Doe",
@@ -13,28 +12,10 @@
   "scope": "agent",
 
   "targets": [
-    { "target": "ticket-sidebar", "url": "html/ticket-sidebar.html" },
-    { "target": "person", "url": "html/person.html" }
+    { "target": "ticket-sidebar", "url": "html/ticket-sidebar.html" }
   ],
 
-  "settings": [
-    {
-      "name": "my_setting",
-      "type": "text/textarea/select/hidden",
-      "default_value": "foo",
+  "settings": [],
 
-      "is_private": false,
-
-      "options": [
-        {"name": "example_option", "value": "foo"}
-      ]
-    }
-  ],
-
-  "deskpro_api_tags": ["tickets.*"],
-  "external_apis": [
-    "https://my-domain.com/*",
-    "/^https?://w+.deskpro.com/.*?$",
-    "https://${settings.my_domain_name}.com/*"
-  ]
+  "deskpro_api_tags": []
 }

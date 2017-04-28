@@ -1,6 +1,4 @@
 import React from 'react';
-import { Button, Container } from 'semantic-ui-react';
-
 
 export default class App extends React.Component {
 
