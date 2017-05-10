@@ -25,7 +25,7 @@
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "devDependencies": {
     "@deskproapps/dpat": "0.2.3",
-    "@deskproapps/deskproapps-sdk-react": "0.1.7",
+    "@deskproapps/deskproapps-sdk-react": "0.2.0",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "semantic-ui-react": "0.67.2"
