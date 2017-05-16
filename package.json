@@ -24,7 +24,7 @@
   },
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "devDependencies": {
-    "@deskproapps/dpat": "0.2.3",
+    "@deskproapps/dpat": "0.3.0",
     "@deskproapps/deskproapps-sdk-react": "0.2.0",
     "eslint": "^3.19.0",
     "eslint-config-airbnb": "^14.1.0",
