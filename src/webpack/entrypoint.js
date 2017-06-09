@@ -1,2 +1,5 @@
+import { createApp } from '@deskproapps/deskproapps-sdk-react';
 require('../main/sass/index.scss');
-require('../main/javascript');
+import { runApp } from '../main/javascript'
+
+createApp(runApp);

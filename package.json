@@ -4,10 +4,9 @@
   "description": "A foundation to get you started developing React DeskPro Apps with the best developer experience ",
   "main": "lib/main/javascript/index.js",
   "scripts": {
-    "release": "npm_bump",
     "dev": "dpat server .",
-    "package": "dpat package .",
-    "test": "dpat test ."
+    "package": "dpat clean . && dpat compile . && dpat verify ./dist && dpat package .",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -24,15 +23,8 @@
   },
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "devDependencies": {
-    "@deskproapps/dpat": "0.3.0",
-    "@deskproapps/deskproapps-sdk-react": "0.2.0",
-    "eslint": "^3.19.0",
-    "eslint-config-airbnb": "^14.1.0",
-    "eslint-plugin-compat": "^1.0.2",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-promise": "^3.5.0",
-    "eslint-plugin-react": "^6.9.0",
+    "@deskproapps/dpat": "0.3.2",
+    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.5",
     "react": "15.5.3",
     "react-dom": "15.5.3",
     "semantic-ui-react": "0.67.2"

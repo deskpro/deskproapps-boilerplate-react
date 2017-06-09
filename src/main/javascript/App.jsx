@@ -1,18 +1,11 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 
-export default class App extends React.Component {
+export default class App extends React.Component
+{
+  static propTypes = { dpapp: React.PropTypes.object.isRequired };
 
-  static propTypes = {
-    dpapp: React.PropTypes.object,
-    ui: React.PropTypes.func.isRequired
-  };
+  shouldComponentUpdate() { return false; }
 
-  componentDidMount() {
-    const { ui } = this.props;
-    ui('enable', { loader: false });
-  }
-
-  render() {
-    return (<div>Hello World</div>);
-  }
+  render() { return 'Hello world'; }
 }

@@ -1,4 +1,6 @@
-import { connect } from '@deskproapps/deskproapps-sdk-react';
+import ReactDOM from 'react-dom';
 import App from './App';
 
-connect(App, 'My First App').render('#deskpro-app');
+export function runApp(app) {
+  ReactDOM.render(<App dpapp={app} />, document.getElementById('deskpro-app'));
+}
