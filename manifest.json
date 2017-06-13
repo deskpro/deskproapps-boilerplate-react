@@ -1,21 +1,20 @@
 {
+  "version": "2.0.0",
+  "appVersion": "0.1.0",
   "name": "Your app name",
+  "title": "Trello",
   "description": "A short description that supports **Markdown**",
-
   "author": {
     "name": "John Doe",
     "email": "email@example.com",
     "url": "https://example.com/"
   },
-
   "is_single": true,
   "scope": "agent",
-
   "targets": [
-    { "target": "ticket-sidebar", "url": "html/ticket-sidebar.html" }
+    { "target": "ticket-sidebar", "url": "html/index.html" }
   ],
-
   "settings": [],
-
-  "deskpro_api_tags": []
+  "deskpro_api_tags": [],
+  "external_apis": []
 }
