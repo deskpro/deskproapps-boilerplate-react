@@ -7,5 +7,5 @@ export default class App extends React.Component
 
   shouldComponentUpdate() { return false; }
 
-  render() { return 'Hello world'; }
+  render() { return (<div>Hello world</div>); }
 }
