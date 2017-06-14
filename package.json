@@ -23,9 +23,9 @@
   },
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.5"
+    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.6"
   },
   "devDependencies": {
-    "@deskproapps/dpat": "0.3.3"
+    "@deskproapps/dpat": "0.3.4"
   }
 }
