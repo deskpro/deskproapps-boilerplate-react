@@ -8,9 +8,9 @@
       "resolved": "https://registry.npmjs.org/@deskproapps/deskproapps-sdk-core/-/deskproapps-sdk-core-1.0.0-alpha.9.tgz"
     },
     "@deskproapps/deskproapps-sdk-react": {
-      "version": "1.0.0-alpha.8",
-      "from": "@deskproapps/deskproapps-sdk-react@1.0.0-alpha.8",
-      "resolved": "https://registry.npmjs.org/@deskproapps/deskproapps-sdk-react/-/deskproapps-sdk-react-1.0.0-alpha.8.tgz"
+      "version": "1.0.0-alpha.9",
+      "from": "@deskproapps/deskproapps-sdk-react@1.0.0-alpha.9",
+      "resolved": "https://registry.npmjs.org/@deskproapps/deskproapps-sdk-react/-/deskproapps-sdk-react-1.0.0-alpha.9.tgz"
     },
     "align-text": {
       "version": "0.1.4",
@@ -141,8 +141,7 @@
     "decamelize": {
       "version": "1.2.0",
       "from": "decamelize@>=1.0.0 <2.0.0",
-      "resolved": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz",
-      "optional": true
+      "resolved": "https://registry.npmjs.org/decamelize/-/decamelize-1.2.0.tgz"
     },
     "deep-extend": {
       "version": "0.4.1",
@@ -257,9 +256,9 @@
       "resolved": "https://registry.npmjs.org/iterall/-/iterall-1.1.1.tgz"
     },
     "js-tokens": {
-      "version": "3.0.1",
+      "version": "3.0.2",
       "from": "js-tokens@>=3.0.0 <4.0.0",
-      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-3.0.1.tgz"
+      "resolved": "https://registry.npmjs.org/js-tokens/-/js-tokens-3.0.2.tgz"
     },
     "kind-of": {
       "version": "3.2.2",
