@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "dpat server .",
     "package": "dpat clean . && dpat compile . && dpat verify ./dist && dpat package .",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest -c .jestrc.json src/test"
   },
   "repository": {
     "type": "git",
@@ -23,9 +23,11 @@
   },
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-react": "^1.0.0-alpha.8"
+    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.9"
   },
   "devDependencies": {
-    "@deskproapps/dpat": "0.3.4"
+    "@deskproapps/dpat": "0.4.1",
+    "jest": "^20.0.4",
+    "react-test-renderer": "^15.6.1"
   }
 }
