@@ -39,11 +39,11 @@
       { "target": "ticket-sidebar", "url": "html/index.html" }
     ],
     "settings": [],
-    "deskpro_api_tags": [],
-    "external_apis": []
+    "deskproApiTags": [],
+    "externalApis": []
   },
   "devDependencies": {
-    "@deskproapps/dpat": "0.4.1",
+    "@deskproapps/dpat": "0.4.2",
     "jest": "^20.0.4",
     "react-test-renderer": "^15.6.1"
   }
