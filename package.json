@@ -16,7 +16,11 @@
     "deskpro",
     "react-boilerplate"
   ],
-  "author": "Deskpro",
+  "author": {
+    "name": "DeskPRO Apps",
+    "email": "apps@deskpro.com",
+    "url": "https://www.deskpro.com"
+  },
   "license": "BSD-3-Clause",
   "bugs": {
     "url": "https://github.com/DeskproApps/app-boilerplate-react/issues"
@@ -24,6 +28,19 @@
   "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
   "dependencies": {
     "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.9"
+  },
+  "deskpro": {
+    "version": "2.0.0",
+    "title": "Your app title",
+
+    "isSingle": true,
+    "scope": "agent",
+    "targets": [
+      { "target": "ticket-sidebar", "url": "html/index.html" }
+    ],
+    "settings": [],
+    "deskpro_api_tags": [],
+    "external_apis": []
   },
   "devDependencies": {
     "@deskproapps/dpat": "0.4.1",
