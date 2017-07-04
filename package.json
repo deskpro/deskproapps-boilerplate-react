@@ -30,7 +30,7 @@
     "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.9"
   },
   "deskpro": {
-    "version": "2.0.0",
+    "version": "2.1.0",
     "title": "Your app title",
 
     "isSingle": true,
