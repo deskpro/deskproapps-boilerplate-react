@@ -1,6 +1,6 @@
 # app-boilerplate-react
 
-Allows insertion of arbitrary markup into the parent DeskPro window
+A foundation to get you started developing React DeskPro Apps with the best developer experience
 
 ## Getting started
      
@@ -36,4 +36,4 @@ and a zip file named `app.zip`. This `app.zip` file is the one required to insta
 
 ## Documentation
 
- View online docs at: https://deskproapps.github.io/app-boilerplate-react
+ View online docs at: https://deskpro.github.io/deskproapps-boilerplate-react

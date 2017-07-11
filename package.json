@@ -1,7 +1,7 @@
 {
   "name": "@deskproapps/app-boilerplate-react",
   "version": "0.1.0",
-  "description": "A foundation to get you started developing React DeskPro Apps with the best developer experience ",
+  "description": "A foundation to get you started developing React DeskPro Apps with the best developer experience",
   "main": "lib/main/javascript/index.js",
   "scripts": {
     "dev": "dpat server .",
@@ -10,7 +10,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/DeskproApps/app-boilerplate-react.git"
+    "url": "git+https://github.com/DeskproApps/deskproapps-boilerplate-react.git"
   },
   "keywords": [
     "deskpro",
@@ -23,11 +23,11 @@
   },
   "license": "BSD-3-Clause",
   "bugs": {
-    "url": "https://github.com/DeskproApps/app-boilerplate-react/issues"
+    "url": "https://github.com/Deskpro/deskproapps-boilerplate-react/issues"
   },
-  "homepage": "https://github.com/DeskproApps/app-boilerplate-react#readme",
+  "homepage": "https://github.com/Deskpro/deskproapps-boilerplate-react#readme",
   "dependencies": {
-    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.9"
+    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.10"
   },
   "deskpro": {
     "version": "2.1.0",
@@ -43,7 +43,7 @@
     "externalApis": []
   },
   "devDependencies": {
-    "@deskproapps/dpat": "0.4.3",
+    "@deskproapps/dpat": "0.4.5",
     "jest": "^20.0.4",
     "react-test-renderer": "^15.6.1"
   }
