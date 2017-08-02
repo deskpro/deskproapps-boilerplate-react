@@ -26,21 +26,21 @@ and you have successfully cloned this repository. Any commands, unless specified
 
 If your application offers a user interface, then the first thing to do is install the required dependencies:
 
-    npm install --save @deskproapps/deskproapps-sdk-react && npm install -g @deskproapps/dpat  
+    npm install && npm install --save @deskproapps/deskproapps-sdk-react && npm install -g @deskproapps/dpat  
 
 We recommend to have [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) globally available, but if for some reason you can not, then install all the dependencies locally with this command:
 
-    npm install --save @deskproapps/deskproapps-sdk-react && npm install @deskproapps/dpat
+    npm install && npm install --save @deskproapps/deskproapps-sdk-react && npm install @deskproapps/dpat
 
 ### Developing background applications
 
 Background applications are applications which do not require a user interface, beyond showing the occasional warning messages or pop-ups. If you want to develop such an application, you should install the dependencies with this command:
 
-    npm install --save @deskproapps/deskproapps-sdk-core && npm install -g @deskproapps/dpat  
+    npm install && npm install --save @deskproapps/deskproapps-sdk-core && npm install -g @deskproapps/dpat  
 
 We recommend to have [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) globally available, but if for some reason you can not, then install all the dependencies locally with this command:
 
-    npm install --save @deskproapps/deskproapps-sdk-core && npm install @deskproapps/dpat
+    npm install && npm install --save @deskproapps/deskproapps-sdk-core && npm install @deskproapps/dpat
 
 ## Examples
 
