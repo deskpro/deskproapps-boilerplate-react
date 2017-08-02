@@ -12,7 +12,7 @@ A foundation to get you started developing React DeskPro Apps with the best deve
 
 ## Installation
     
-This project requires [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) to be installed alongside the other dependencies. You can install [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) either locally or globally. We recommend to install it globally so you have it always availabe
+This project requires [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) to be installed alongside the other dependencies. You can install [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) either locally or globally. We recommend to install it globally so you have it always available, regardless of how many apps you develop.
     
 To install the dependencies and [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) locally, run:
     
