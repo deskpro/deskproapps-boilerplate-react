@@ -26,25 +26,22 @@
     "url": "https://github.com/Deskpro/deskproapps-boilerplate-react/issues"
   },
   "homepage": "https://github.com/Deskpro/deskproapps-boilerplate-react#readme",
-  "dependencies": {
-    "@deskproapps/deskproapps-sdk-react": "1.0.0-alpha.10"
-  },
   "deskpro": {
     "version": "2.1.0",
     "title": "Your app title",
-
     "isSingle": true,
     "scope": "agent",
     "targets": [
-      { "target": "ticket-sidebar", "url": "html/index.html" }
+      {
+        "target": "ticket-sidebar",
+        "url": "html/index.html"
+      }
     ],
     "settings": [],
     "deskproApiTags": [],
     "externalApis": []
   },
   "devDependencies": {
-    "@deskproapps/dpat": "0.4.5",
-    "jest": "^20.0.4",
     "react-test-renderer": "^15.6.1"
   }
 }
