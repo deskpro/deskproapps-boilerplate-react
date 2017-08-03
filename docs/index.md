@@ -1,16 +1,6 @@
-# app-boilerplate-react
+# Getting started
 
-A foundation with the best developer experience in mind to get you started developing React DeskPro Apps
-
-## Contents
-- [Getting Started](#getting-started)
-    - [Developing applications with a user interface](#developing-applications-with-a-user-interface)
-    - [Developing background applications](#developing-background-applications)    
-- [Examples](#examples)
-- [Testing](#testing)
-
-
-## Getting Started
+This page will help you install and build your first DeskproApps app.
 
 Three items are required in order to get started developing applications:
 
@@ -41,7 +31,3 @@ Background applications are applications which do not require a user interface, 
 We recommend to have [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) globally available, but if for some reason you can not, then install all the dependencies locally with this command:
 
     npm install && npm install --save @deskproapps/deskproapps-sdk-core && npm install @deskproapps/dpat
-
-## Examples
-
-## Testing
