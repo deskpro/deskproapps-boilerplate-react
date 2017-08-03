@@ -10,7 +10,7 @@ A foundation with the best developer experience in mind to get you started devel
 - [Testing](#testing)
 
 
-##Getting Started
+## Getting Started
 
 Three items are required in order to get started developing applications:
 
