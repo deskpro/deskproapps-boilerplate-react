@@ -87,9 +87,9 @@ The following diagram shows the recommended project structure and below you will
     
 - src/main/docs 
      
-     This folder should host the application's README.md file and any other documentation files you need to bundle with your application. Any install instructions or any information required during install should go in here. 
+     This folder should host the application's `README.md` file and any other documentation files you need to bundle with your application. Any install instructions or any information required during install should go in here. 
      
-     The **README.md** file from this folder will be shown by the installation wizard in DeskPRO.
+     The `README.md` file from this folder will be shown by the installation wizard in DeskPRO.
      
 - src/main/html
 
@@ -103,7 +103,7 @@ The following diagram shows the recommended project structure and below you will
      
 - src/main/javascript/index.js
      
-     Your application entrypoint, exports a function named **runApp** which must return a React Component
+     Your application entrypoint, exports a function named `runApp` which must return a React Component
      
 - src/main/resources
      
@@ -113,7 +113,7 @@ The following diagram shows the recommended project structure and below you will
 
 - src/main/sass     
 
-    This folder holds your sass files. These files will be automatically compiled at build time and will end in the **/assets** folder of your application bundle as one file called `main.css`
+    This folder holds your sass files. These files will be automatically compiled at build time and will end in the `/assets` folder of your application bundle as one file called `main.css`
     
     The index.scss file is the entrypoint to the rest of your sass files. This file should contain `@import` statements for the scss files you want to include. Any file not referenced by a sass import statement in index.scss will be ignored by the build tool
 
