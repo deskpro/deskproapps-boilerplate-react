@@ -1,6 +1,6 @@
 ###The basics
 
-- [Getting Started](#getting-started)    
+- [Getting Started](basics/getting-started.html)    
 - [Examples](#examples)
 - [Testing](#testing)
 
