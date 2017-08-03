@@ -2,11 +2,18 @@
 
 A Deskpro Apps application is at it's core an iframe which is loaded at various locations inside the main DeskPRO user interface and interacts with the other user interface components 
    by using the [Window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API  
+   
+In this section, you will learn about:
 
-On disk, an application is a folder with a simple structure which will be presented next. This folder is packaged into a zip file, called an application bundle which is used to install the application.  
+- [The application structure](#the-application-structure)
+- [The application manifest](#the-application-manifest)
+- [The project structure](#the-project-structure)
+- [Running tests](#running-tests)
+- [Online guides and documentation](https://deskpro.github.io/deskproapps-boilerplate-react)
 
 ## The application structure
 
+On disk, an application is a folder with a simple structure which will be presented next. This folder is packaged into a zip file, called an application bundle which is used to install the application.
 We are somehow opinionated when it comes to how you want to structure your app. We require each app to have an icon, a readme file, at least one html file and an application manifest: 
 
 ```
@@ -19,6 +26,31 @@ We are somehow opinionated when it comes to how you want to structure your app. 
     └── README.md
 
 ```
+
+Here is a description of each element from the previous diagram:
+
+
+- assets folder
+    
+    The assets folder is where all your css, js, and everything which is not html should be located
+    
+- assets/icon.png
+    
+    This is the default icon of your application which will be used everywhere inside DeskPRO to represent your app. It is best to have a square image, with size of 128x128 pixels. 
+
+- html folder
+    
+    This folder contains all the html pages of your application that will be served as iframes when the application is loaded. You can reference external assets in your html, for instance the CDN version of jquery or packages from npm's CDN
+    
+- README.md
+    
+    This is a markdown document that should contain your instructions to users who will install your application. It will be shown by the installation wizard 
+ 
+- manifest.json
+ 
+    This file contains the application manifest in a json format and is a very important one because it describes your application and its requirements so DeskPRO knows how to handle it. The application manifest will contain information like your application's title, description and version but also more advanced settings.
+      
+    We usually handle the manifest generation for you with our build tools, but we believe it is important to know the various options so the next chapter is about its structure 
 
 ## The application manifest
 
