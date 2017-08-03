@@ -1,9 +1,9 @@
 ### The basics
 
-- [Getting Started](basics/getting-started.html)
-- [Learn about our SDKS](basics/learn-about-our-sdks.html)       
-- [Learn the basic concepts](basics/learn-the-basic-concepts.html)
+- [Getting Started](/{{ site.github.repository_name }}/basics/getting-started.html)
+- [Learn about our SDKS](/{{ site.github.repository_name }}/basics/learn-about-our-sdks.html)       
+- [Learn the basic concepts](/{{ site.github.repository_name }}/basics/learn-the-basic-concepts.html)
 
 ### Guides
 
-- [Components](guides/components.html)
+- [Components](/{{ site.github.repository_name }}/guides/components.html)
