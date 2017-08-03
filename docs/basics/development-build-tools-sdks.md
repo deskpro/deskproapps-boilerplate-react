@@ -1,11 +1,14 @@
 # Development, build tools and SDKs
 
-In this section, you will learn about:
+In this section, you will learn more about:
 
+- [Development workflow](#development-workflow)
 - [The project structure](#the-project-structure)
 - [DeskPRO Apps Tool](#deskpro-apps-tool)
 - [The Core SDK](#the-core-sdk)
 - [The React SDK](#the-react-sdk)
+
+## Development workflow
 
 ## The project structure
 
