@@ -9,14 +9,23 @@ In this section, you will learn more about:
 - [DeskPRO Apps Tool](#deskpro-apps-tool)
 - [The React SDK](#the-react-sdk)
 
-When developing a new application, it is best to use the development server that comes with [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat). If you have cloned the [Deskpro Apps Boilerplate]](https://github.com/deskpro/deskproapps-boilerplate-react),
+# Technology stack
+
+We recommend using [React](https://facebook.github.io/react/) for your apps and for this reason this guide will start by presenting a project structure suitable for using React.
+
+Other technologies we use are [Webpack](https://webpack.js.org/) for bundling, [Babel](https://babeljs.io/) for compiling and [Jest](https://facebook.github.io/jest/) for testing.
+
+We have conveniently incorporated Webpack, Babel and Jest into our build tool, [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) so there's no setup required and you can focus on building the application
+using the best of the latest technology.
+
+We have also bundled a development server with [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat). If you have cloned the [Deskpro Apps Boilerplate]](https://github.com/deskpro/deskproapps-boilerplate-react),
 you can start it with the following command:
 
     npm run dev
 
-The development server takes care of all the compilation details and you can can use the latest ES6 syntax out-of-the-box. It will also watch your files for any changes and handle the compilation for you.
+The development server takes care of all the compilation details and you can can use the latest ES6 syntax out-of-the-box. It will also watch your files for any changes and handle the compilation for you, dramatically reducing the development timed
 
-We recommend using [React](https://facebook.github.io/react/) for your apps and for this reason this guide will start by presenting a project structure suitable for using React   
+   
 
 ## The project structure
 
@@ -124,6 +133,10 @@ The following diagram shows the recommended project structure and below you will
 - src/webpack
      
      This folder contains the build and package configuration for webpack. Normally there should be no reason to modify any of these files, but we want to be flexible so we provide them with our boilerplate in case you ever need to tweak them.
+     
+- target
+     
+     This folder is used by the development server to stage your files during development. All its contents are ignored.
      
      
 Now that you have an overview of the project structure, it's time to review the requirements for `package.json`      
