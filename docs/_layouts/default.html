@@ -25,7 +25,7 @@
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        {% include navigation.md %}
+        {% include navigation.md | markdownify %}
 
         {% if site.show_downloads %}
         <ul>
