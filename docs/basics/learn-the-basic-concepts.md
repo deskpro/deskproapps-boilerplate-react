@@ -5,7 +5,6 @@ In this section, you will learn about:
 - [The application structure](#the-application-structure)
 - [The application manifest](#the-application-manifest)
 - [The application object](#the-application-object)
-- [The project structure](#the-project-structure)
 
 A Deskpro Apps application is at it's core an iframe which is loaded at various locations inside the main DeskPRO user interface and interacts with the other user interface components 
    by using the [Window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API  
@@ -86,5 +85,3 @@ The application manifest is a json object with the purpose of describing you app
 ```
 
 ## The application object
-
-## The project structure
