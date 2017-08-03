@@ -6,5 +6,5 @@
 
 ### Guides
 
-- [Common Scenarios](/{{ site.github.repository_name }}/guides/common-scenarios.html)
-- [Components](/{{ site.github.repository_name }}/guides/components.html)
+- [Common scenarios](/{{ site.github.repository_name }}/guides/common-scenarios.html)
+- [Application state overview](/{{ site.github.repository_name }}/guides/application-state-overview.html)

@@ -48,7 +48,7 @@ In this section, you will learn about:
 
 ```
 
-## DeskPRO-apps-tool
+## DeskPRO Apps Tool
 
 ## The Core Sdk
 
