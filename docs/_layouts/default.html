@@ -10,6 +10,28 @@
     <!--[if lt IE 9]>
     <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
     <![endif]-->
+
+    <style>
+        /*navigation overrides*/
+    .navigation ul {
+        list-style: auto;
+        height: auto;
+        padding: auto;
+        background: none;
+        border-radius: inherit;
+        border: inherit;
+        width: auto;
+    }
+
+    .navigation li {
+        width: auto;
+        float: none;
+        border-right: none;
+        height: auto;
+    }
+
+    </style>
+
 </head>
 <body>
 <div class="wrapper">
@@ -25,7 +47,9 @@
         <p class="view"><a href="{{ site.github.owner_url }}">View My GitHub Profile</a></p>
         {% endif %}
 
-        {% include navigation.html %}
+        <div id="navigation">
+            {% include navigation.html %}
+        </div>
 
         {% if site.show_downloads %}
         <ul>
