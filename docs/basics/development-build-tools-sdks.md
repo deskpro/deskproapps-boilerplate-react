@@ -4,6 +4,7 @@ In this section, you will learn more about:
 
 - [Development workflow](#development-workflow)
 - [The project structure](#the-project-structure)
+- [Setting up package.json](#setting-up-package-json)
 - [DeskPRO Apps Tool](#deskpro-apps-tool)
 - [The Core SDK](#the-core-sdk)
 - [The React SDK](#the-react-sdk)
@@ -50,6 +51,8 @@ In this section, you will learn more about:
 
 
 ```
+
+## Setting up package.json
 
 ## DeskPRO Apps Tool
 

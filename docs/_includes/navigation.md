@@ -10,3 +10,4 @@
 - [Application state overview](/{{ site.github.repository_name }}/guides/application-state-overview.html)
 - [Using Oauth](/{{ site.github.repository_name }}/guides/using-oauth.html)
 - [Running DeskPRO in development mode](/{{ site.github.repository_name }}/guides/running-deskpro-in-development-mode.html)
+- [Setting up Travis](/{{ site.github.repository_name }}/guides/setting-up-travis.html)
