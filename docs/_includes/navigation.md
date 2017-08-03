@@ -1,7 +1,7 @@
 ### The basics
 
 - [Getting Started](/{{ site.github.repository_name }}/basics/getting-started.html)
-- [Learn about our SDKS](/{{ site.github.repository_name }}/basics/learn-about-our-sdks.html)       
+- [Learn about tools and SDKs](/{{ site.github.repository_name }}/basics/learn-about-tools-sdks.html)       
 - [Learn the basic concepts](/{{ site.github.repository_name }}/basics/learn-the-basic-concepts.html)
 
 ### Guides

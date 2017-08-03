@@ -1,19 +1,25 @@
 # Learn the basic concepts
 
-A Deskpro Apps application is at it's core an iframe which is loaded at various locations inside the main DeskPRO user interface and interacts with the other user interface components 
-   by using the [Window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API  
-   
 In this section, you will learn about:
 
 - [The application structure](#the-application-structure)
 - [The application manifest](#the-application-manifest)
+- [The application object](#the-application-object)
 - [The project structure](#the-project-structure)
-- [Running tests](#running-tests)
-- [Online guides and documentation](https://deskpro.github.io/deskproapps-boilerplate-react)
+
+A Deskpro Apps application is at it's core an iframe which is loaded at various locations inside the main DeskPRO user interface and interacts with the other user interface components 
+   by using the [Window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API  
+
+We call the locations that can load and display apps, application **targets** and your application can choose from a number of such targets. Example of such targets are *ticket-sidebar* for apps that appear
+ in a sidebar when a ticket is opened in the agent interface, or *background* for applications that do not need to interact with the user directly.
+  
+Each such application target will have different properties and hooks you can call and it will its own UI requirements 
+   
 
 ## The application structure
 
 On disk, an application is a folder with a simple structure which will be presented next. This folder is packaged into a zip file, called an application bundle which is used to install the application.
+
 We are somehow opinionated when it comes to how you want to structure your app. We require each app to have an icon, a readme file, at least one html file and an application manifest: 
 
 ```
@@ -53,5 +59,32 @@ Here is a description of each element from the previous diagram:
     We usually handle the manifest generation for you with our build tools, but we believe it is important to know the various options so the next chapter is about its structure 
 
 ## The application manifest
+
+The application manifest is a json object with the purpose of describing you app and its requirements. It has the following structure:
+    
+```
+{
+  "appVersion": "",
+  "author": {
+    "email": "",
+    "name": "",
+    "url": ""
+  },
+  "description": "",
+  "deskproApiTags": [],
+  "externalApis": [],
+  "isSingle": true|false,
+  "name": "",
+  "scope": "agent",
+  "settings": [],
+  "state": [],
+  "targets": [],
+  "title": "",
+  "version": ""
+}
+
+```
+
+## The application object
 
 ## The project structure
