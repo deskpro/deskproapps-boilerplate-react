@@ -62,7 +62,7 @@ Here is a description of each element from the previous diagram:
 
 The application manifest is a json object with the purpose of describing you app and its requirements. It has the following structure:
     
-```
+```json
 {
   "appVersion": "",
   "author": {
