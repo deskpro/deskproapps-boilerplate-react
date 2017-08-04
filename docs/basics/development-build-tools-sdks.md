@@ -6,8 +6,8 @@ In this section, you will learn more about:
 - [The project structure](#the-project-structure)
 - [Setting up the application manifest](#setting-up-the-application-manifest)
 - [Application entrypoint](#application entrypoint)
-- [DeskPRO Apps Tool](#deskpro-apps-tool)
 - [The React SDK](#the-react-sdk)
+- [DeskPRO Apps Tool](#deskpro-apps-tool)
 
 # Technology stack
 
