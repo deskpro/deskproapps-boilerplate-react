@@ -9,6 +9,43 @@ In this section, you will see code examples for the most common operations:
 
 ## Saving and reading state
 
+Saving application-scoped state:
+
+```javascript
+    const value = {
+      aString: 'a string',
+      aNumber: 5,
+      aBoolean : false
+    };
+
+    const { dpapp } = this.props;    
+    dpapp.state.setAppState('app-settings', value).then(savedValue => console.log(savedValue));
+```
+
+Reading application-scoped state:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.state.getAppState('app-settings').then(value => console.log(value));
+```
+
+Saving context-scoped state: 
+
+```javascript
+    const cardId = 5;
+
+    const { dpapp } = this.props;    
+    dpapp.state.setEntityState('linked-card', cardId).then(savedValue => console.log(savedValue));
+```
+
+Reading application-scoped state:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.state.getEntityState('app-settings').then(value => console.log(value));
+```    
+    
+
 ## Make REST calls to DeskPRO APIs
 
 ## Interact with the main DeskPRO User interface
