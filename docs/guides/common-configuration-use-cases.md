@@ -1,4 +1,4 @@
-# Common configuration scenarios
+# Common configuration use cases
 
 In this section:
 

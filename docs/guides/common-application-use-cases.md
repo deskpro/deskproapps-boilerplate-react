@@ -1,4 +1,4 @@
-# Common application scenarios
+# Common application use cases
 
 In this section, you will see code examples for the most common operations:
 
