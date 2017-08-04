@@ -212,7 +212,7 @@ The manifest contains application properties like the title, installation inform
     
     An `Application Target Definition` is an object with two properties: `target` and `url`. The `target` is one of our predefined targets, and `url` is a relative (from your application root) url to one of your html files.
       
-    If you follow the project structure and your html file is `src/main/html/<path>/file.html`, then your url will be `html/<path>/file.html`  
+    If you follow the project structure and your html file is `src/main/html<path-to-file>/file.html`, then your url will be `html<path-to-file>>/file.html`  
 
 - settings
 
