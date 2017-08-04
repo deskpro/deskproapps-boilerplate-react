@@ -160,20 +160,51 @@ by adding a `deskpro` key to your package.json file:
 
 The manifest contains application properties like the title, installation information and describes how to handle your application state and interaction with external APIs. Take a look at the example manifest below and then read the description of each option:
 
-```
+```json
 {
   "version": "2.1.0",
-  "title": "",
-  "isSingle": true|false,
+  "title": "your application title that will appear in the apps section",
+  "isSingle": true,
   "scope": "agent",
-  "targets": [],
+  "targets": [
+    {
+      "target": "ticket-sidebar",
+      "url": "html/index.html"
+    }
+  ],
   "settings": [],
-  "state": [],
-  "deskproApiTags": [],
+  "state": [
+    {
+      "name": "app-settings",
+      "isBackendOnly": false,
+      "permRead": "EVERYBODY",
+      "permWrite": "OWNER"
+    }
+  ],
+  "deskproApiTags": [
+    "tickets.*"
+  ],
   "externalApis": []
 }
-
 ```
+
+- version
+
+- title
+
+- isSingle
+
+- scope
+
+- targets
+
+- settings
+
+- state
+
+- deskproApiTags
+
+- externalApis
 
 
 ## Application entrypoint
