@@ -209,6 +209,25 @@ The manifest contains application properties like the title, installation inform
 
 ## Application entrypoint
 
-## DeskPRO Apps Tool
+The application entrypoint is a special function named `runApp` that every application must export, which is called when the DeskPRO SDK runtime finishes the initiation phase. The default location for the entrypoint
+ is in `src/main/javascript/index.js` file.
+
+When the entrypoint is called the iframe which hosts your application is fully loaded, and `runApp` will receive a single parameter called `app` which is an object that represents the main way of accessing the DeskPRO Apps functionality. 
+Technically the `app` parameter is an instance of [Core/App](https://github.com/deskpro/deskproapps-sdk-core/blob/master/src/main/javascript/Core/App.js), and is a facade or light-wrapper around the functionality offered by the various components of the DeskPRO Apps SDK.
+
+The SDK does not require a return value from the entrypoint, and for a React application, the entry-point should just render the application. Here is an example:
+
+```javascript
+import ReactDOM from 'react-dom';
+import App from './App';
+
+export function runApp(app) {
+  ReactDOM.render(<App dpapp={app} />, document.getElementById('deskpro-app'));
+}
+
+```
 
 ## The React Sdk
+
+## DeskPRO Apps Tool
+
