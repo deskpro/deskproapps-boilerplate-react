@@ -252,3 +252,9 @@ We recommend you always use the `DeskproAppContainer` if your application needs 
 
 ## DeskPRO Apps Tool
 
+The [DeskPRO Apps Tool]((https://github.com/deskpro/deskproapps-dpat)), commonly referred to as  `dpat` is the build tool we have created to simplify most of the tasks of developing an app.
+
+It is used for validating an application manifest, compiling, packaging and testing an application, for deploying and running the local development server. In the [Deskpro Apps Boilerplate](https://github.com/deskpro/deskproapps-boilerplate-react) project
+you will mostly interact with it via the two npm commands `npm run dev` and `npm run package` when you start the development server and when you are ready to package your application.
+
+

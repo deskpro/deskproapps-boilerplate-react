@@ -35,7 +35,9 @@ From your project's folder, run the following command to start the development s
     
     npm run dev    
     
-Login to the agent interface, and navigate to the link below: 
+The server can be found at this address `http://localhost:31080` and it will now serve your application when requested by the helpedesk.    
+    
+The next step is to login to the agent interface, and navigate to the link below: 
     
     https://your-local-deskpro.com/agent/?appstore.environment=development    
     
