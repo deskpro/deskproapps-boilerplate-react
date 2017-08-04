@@ -18,7 +18,7 @@ Other technologies we use are [Webpack](https://webpack.js.org/) for bundling, [
 We have conveniently incorporated Webpack, Babel and Jest into our build tool, [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat) so there's no setup required and you can focus on building the application
 using the best of the latest technology.
 
-We have also bundled a development server with [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat). If you have cloned the [Deskpro Apps Boilerplate]](https://github.com/deskpro/deskproapps-boilerplate-react),
+We have also bundled a development server with [Deskpro Apps Tool](https://github.com/deskpro/deskproapps-dpat). If you have cloned the [Deskpro Apps Boilerplate](https://github.com/deskpro/deskproapps-boilerplate-react),
 you can start it with the following command:
 
     npm run dev
