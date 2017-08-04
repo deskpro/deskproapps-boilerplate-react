@@ -216,11 +216,40 @@ The manifest contains application properties like the title, installation inform
 
 - settings
 
+    Keep this as an empty list for now. 
+
 - state
+
+    This is a white list of `State Access Pattern` objects, which define who can access the state your application is persisting. Application State is an important concept, so make sure to read [Common Configuration Scenarios](/{{ site.github.repository_name }}/guides/common-configuration-scenarios.html) for a more in-depth coverage.    
+
+    A `State Access Pattern` is an object with the following properties:
+    
+    - name 
+    
+        This is the name of your state variable
+        
+    - isBackendOnly
+    
+        This is a flag which control which systems can access your state variable. If it is `false`, then your state variable will be available everywhere.
+        If it is `true` the variable will only be available to internal system and it will never be exposed to the outside world
+    
+    - permRead
+    
+        This option establishes who can read the variable. There are only to values, `OWNER` and `EVERYBODY`. `OWNER` means only the user who created the variable can read, and `EVERYBODY` means reading is un-restricted.
+        
+    - permWrite
+              
+        This option establishes who can update or delete the variable. There are only to values, `OWNER` and `EVERYBODY`. `OWNER` means only the user who created the variable can write, and `EVERYBODY` means writing is un-restricted.              
 
 - deskproApiTags
 
+    Keep this as an empty list for now
+
 - externalApis
+
+    This is a white list of url patterns which is used to control which third party API's your application can access. If you need to an external api, and chances are that you will, make sure it is on this list. 
+    
+    Make sure to read [Common Configuration Scenarios](/{{ site.github.repository_name }}/guides/common-configuration-scenarios.html) for example of such url patterns. 
 
 
 ## Application entrypoint
