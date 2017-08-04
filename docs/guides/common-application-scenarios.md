@@ -3,7 +3,7 @@
 In this section, you will see code examples for the most common operations:
 
 - [Saving and reading state](#saving-and-reading-state)
-- [Make REST calls to DeskPRO APIs](#make-rest-calls-to-deskpro-apis)
+- [Make REST calls](#make-rest-calls)
 - [Interact with the main DeskPRO User interface](#interact-with-the-main-deskpro-user-interface)
 - [Control your application's User Interface](#control-your-applications-user-interface)
 
@@ -46,7 +46,33 @@ Reading application-scoped state:
 ```    
     
 
-## Make REST calls to DeskPRO APIs
+## Make REST calls
+
+Making rest calls to DeskPRO APIs (the apps use the v2 api endpoints):
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.restApi.fetch(
+      'me', 
+      { 
+        method: "PUT",
+        headers: { 'Accept': 'application/json','Content-Type': 'application/json' }
+      }
+    ).then(response => console.log(response.body));
+```
+
+Making rest calls to an API which does not have CORS enabled:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.restApi.fetchCors(
+      'https://login.mailchimp.com/oauth2/metadata', 
+      { 
+        method: "GET",
+        headers: { 'Accept': 'application/json','Content-Type': 'application/json' }
+      }
+    ).then(response => console.log(response.body));
+```
 
 ## Interact with the main DeskPRO User interface
 
