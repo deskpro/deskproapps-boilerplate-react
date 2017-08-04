@@ -229,5 +229,26 @@ export function runApp(app) {
 
 ## The React Sdk
 
+Most of the apps will require a user interface, whether it is forms, authentication buttons or just displaying data. We wanted to have a uniform look and feel for the apps to better integrate them in our helpdesk's UI so
+we created many React components to cover most of the UI needs and help you develop faster 
+
+One of the most useful components is the `DeskproAppContainer`, which has the purpose of increasing the usability of your and providing a consistent-look-and feel. It adds menus, a title bar, and takes care of rendering your application. Here is an example of how to use it in your entrypoint:
+  
+```javascript
+import ReactDOM from 'react-dom';
+import { DeskproAppContainer } from '@deskproapps/deskproapps-sdk-react';
+import App from './App';
+
+export function runApp(app) {
+  ReactDOM.render(
+    <DeskproAppContainer app={app} name={'YOUR APP NAME'} mainComponent={App} />,
+    document.getElementById('deskpro-app')
+  );
+}
+  
+```
+
+We recommend you always use the `DeskproAppContainer` if your application needs a user interface. It will simplify your app development and it will make it easier for your helpdesk user's to use your app.
+
 ## DeskPRO Apps Tool
 
