@@ -5,7 +5,7 @@ In this section, you will see code examples for the most common operations:
 - [Saving and reading state](#saving-and-reading-state)
 - [Make REST calls](#make-rest-calls)
 - [Interact with the main DeskPRO User interface](#interact-with-the-main-deskpro-user-interface)
-- [Control your application's User Interface](#control-your-applications-user-interface)
+- [Interact with your application's UI Container](#interact-with-your-applications-ui-container)
 
 ## Saving and reading state
 
@@ -65,7 +65,7 @@ Making rest calls to an API which does not have CORS enabled:
 
 ```javascript
     const { dpapp } = this.props;    
-    dpapp.restApi.fetchCors(
+    dpapp.restApi.fetchCORS(
       'https://login.mailchimp.com/oauth2/metadata', 
       { 
         method: "GET",
@@ -76,4 +76,61 @@ Making rest calls to an API which does not have CORS enabled:
 
 ## Interact with the main DeskPRO User interface
 
-## Control your application's User Interface
+Show a notification message inside DeskPRO:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.deskproWindow.showNotification('Your notification message here');
+```
+
+## Interact with your application's UI Container
+
+Show or hide your application:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.ui.hide();
+```
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.ui.show();
+```
+
+Change your application layout to `collapsed` (only the menu bar is visible) and then restore it to `expanded`
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.ui.collapse();
+```
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.ui.expand();
+```
+
+Display a badge count next your application icon:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.ui.badgeCount = 5;
+    dpapp.ui.showBadgeCount();
+```
+
+Display a loading screen while your application is loading some assets  or hide it:
+
+```javascript
+    const { dpapp } = this.props;
+    // show the loading screen
+    dpapp.ui.showLoading();
+    
+    // hide the loading screen
+    dpap.ui.hideLoading();
+```
+
+Show or hide the menu options:
+
+```javascript
+    const { dpapp } = this.props;    
+    dpapp.deskproWindow.showNotification('Your notification message here');
+```
