@@ -163,7 +163,7 @@ The manifest contains application properties like the title, installation inform
 ```json
 {
   "version": "2.1.0",
-  "title": "your application title that will appear in the apps section",
+  "title": "short application title",
   "isSingle": true,
   "scope": "agent",
   "targets": [
@@ -189,14 +189,30 @@ The manifest contains application properties like the title, installation inform
 ```
 
 - version
+    
+    This is the version of the manifest you are using. For now, ```2.1.0``` is the latest version 
 
 - title
 
+    This is the title of your application which your users will see
+
 - isSingle
+
+    This is a boolean flag which determines if the application can be installed multiply times. For now keep this flag to `true`
 
 - scope
 
+    This option determines which DeskPRO module is the target of the application. For now only `agent` is supported and this means
+     your apps will appear only in the ``Agent Interface``. Other values will make it possible for your apps to work for instance in the `Portal Interface`
+
 - targets
+
+    This is a list of `Application Target Definition` objects, which define which of your html files will be displayed in which specially designed user interface location. 
+    It may help to think of the main helpdesk UI as a template with a predefined set of placeholders which can be filled by your application's UI 
+    
+    An `Application Target Definition` is an object with two properties: `target` and `url`. The `target` is one of our predefined targets, and `url` is a relative (from your application root) url to one of your html files.
+      
+    If you follow the project structure and your html file is `src/main/html/<path>/file.html`, then your url will be `html/<path>/file.html`  
 
 - settings
 
