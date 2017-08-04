@@ -63,5 +63,7 @@ You will be asked to a series of questions, make sure you answer yes when you ar
     Encrypt API key? |yes| 
 ```    
 
-Add the .travis.yml file to git, commit and push. Follow the [official GitHub guide](https://help.github.com/articles/creating-releases/) to creating a release and once your release is published, Travis will be notified
+Add the .travis.yml file to git, commit and push. 
+
+Follow the [official GitHub guide](https://help.github.com/articles/creating-releases/) to creating a release and once your release is published, Travis will be notified
 that a new release tag has been created and will start building your application's release artifact. When it's done your release will have a new `app.zip` file ready for distribution!
