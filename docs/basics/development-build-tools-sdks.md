@@ -4,7 +4,7 @@ In this section, you will learn more about:
 
 - [Technology stack](#technology-stack)
 - [The project structure](#the-project-structure)
-- [Setting up package.json](#setting-up-package-json)
+- [Setting up the application manifest](#setting-up-the-application-manifest)
 - [Application entrypoint](#application entrypoint)
 - [DeskPRO Apps Tool](#deskpro-apps-tool)
 - [The React SDK](#the-react-sdk)
@@ -141,7 +141,40 @@ The following diagram shows the recommended project structure and below you will
      
 Now that you have an overview of the project structure, it's time to review the requirements for `package.json`      
      
-## Setting up package.json
+## Setting up the application manifest
+
+The application manifest describes your application and the way it should be managed by DeskPRO. The manifest is defined
+by adding a `deskpro` key to your package.json file: 
+
+```json
+
+{
+  "name": "my-app-name",
+  "version": "1.0.0",
+  "deskpro": {
+    // my deskpro apps config here
+  }
+}
+
+```
+
+The manifest contains application properties like the title, installation information and describes how to handle your application state and interaction with external APIs. Take a look at the example manifest below and then read the description of each option:
+
+```
+{
+  "version": "2.1.0",
+  "title": "",
+  "isSingle": true|false,
+  "scope": "agent",
+  "targets": [],
+  "settings": [],
+  "state": [],
+  "deskproApiTags": [],
+  "externalApis": []
+}
+
+```
+
 
 ## Application entrypoint
 
