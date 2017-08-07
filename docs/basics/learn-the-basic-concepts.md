@@ -3,8 +3,9 @@
 In this section, you will learn about:
 
 - [The application structure](#the-application-structure)
-- [The application manifest](#the-application-manifest)
-- [The application object](#the-application-object)
+- [The application Manifest](#the-application-manifest)
+- [The application Entrypoint](#the-application-entrypoint)
+- [The Application Object](#the-application-object)
 
 A Deskpro Apps application is at it's core an iframe which is loaded at various locations inside the main DeskPRO user interface and interacts with the other user interface components 
    by using the [Window.postMessage](https://developer.mozilla.org/en-US/docs/Web/API/Window/postMessage) API  
@@ -84,4 +85,14 @@ The application manifest is a json object with the purpose of describing you app
 
 ```
 
-## The application object
+## The application Entrypoint
+
+The application entrypoint is a function named `runApp` should be exported by your application's main module, index.js.
+The application entrypoint represents the bridge between DeskPRO Apps SDK and your application and when it is called it represents the signal that your application can start
+
+## The Application Object
+
+The application object gives you access to the DeskPRO Apps Application API and it is made available at runtime as the only
+parameter of your Application Entrypoint.
+
+To find out more about the Application Object, you can visit its definition in the [Deskpro Apps Core SDK](https://github.com/deskpro/deskproapps-sdk-core/blob/master/src/main/javascript/Core/App.js) repository
