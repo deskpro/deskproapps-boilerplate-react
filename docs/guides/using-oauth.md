@@ -106,7 +106,8 @@ Once your application is connected you can request a new access token, by callin
 
 ```javascript
     const { dpapp } = this.props;    
-    dpapp.oauth.access(provider).then(token => console.log(token));    
+    dpapp.oauth.access(provider).then(({ accessToken, refreshToken, expires, resourceOwnerId, ...rest }) => console.log({ accessToken, refreshToken, expires, resourceOwnerId, ...rest }));    
 ```
 
-Here token is an object with the same structure as defined by the Oauth Provider.
+   
+The actual values depend on the Oauth Provider, the only one that can be guaranteed is accessToken, the rest may or may not be available.
