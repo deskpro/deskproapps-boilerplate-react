@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "dpat server .",
     "package": "dpat clean . && dpat compile . && dpat verify ./dist && dpat package .",
-    "test": "jest -c .jestrc.json src/test"
+    "test": "dpat test ."
   },
   "repository": {
     "type": "git",
