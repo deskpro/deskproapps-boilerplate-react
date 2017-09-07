@@ -6,7 +6,7 @@
        
 
 ### Guides
-- [Application state overview](/{{ site.github.repository_name }}/guides/application-state-overview.html)
+- [Application storage overview](/{{ site.github.repository_name }}/guides/application-storage-overview.html)
 - [Common configuration use cases](/{{ site.github.repository_name }}/guides/common-configuration-use-cases.html)
 - [Common application use cases](/{{ site.github.repository_name }}/guides/common-application-use-cases.html)
 - [Using Oauth](/{{ site.github.repository_name }}/guides/using-oauth.html)

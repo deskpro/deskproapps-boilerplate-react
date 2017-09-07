@@ -40,7 +40,7 @@ The procedure can be summarized in three steps:
     
 3. Save the connection
     
-Before you can save the connection, you should declare the following `state access pattern` in your application's manifest:
+Before you can save the connection, you should declare the following `storage access pattern` in your application's manifest:
         
 ```json
   {
