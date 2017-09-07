@@ -2,14 +2,14 @@
 
 In this section, you will see code examples for the most common operations:
 
-- [Saving and reading state](#saving-and-reading-state)
+- [Saving and reading storage](#saving-and-reading-storage)
 - [Make REST calls](#make-rest-calls)
 - [Interact with the main DeskPRO User interface](#interact-with-the-main-deskpro-user-interface)
 - [Interact with your application's UI Container](#interact-with-your-applications-ui-container)
 
-## Saving and reading state
+## Saving and reading storage
 
-Saving application-scoped state:
+Saving application-scoped storage:
 
 ```javascript
     const value = {
@@ -19,30 +19,30 @@ Saving application-scoped state:
     };
 
     const { dpapp } = this.props;    
-    dpapp.state.setAppState('app-settings', value).then(savedValue => console.log(savedValue));
+    dpapp.storage.setAppStorage('app-settings', value).then(savedValue => console.log(savedValue));
 ```
 
-Reading application-scoped state:
+Reading application-scoped storage:
 
 ```javascript
     const { dpapp } = this.props;    
-    dpapp.state.getAppState('app-settings').then(value => console.log(value));
+    dpapp.storage.getAppStorage('app-settings').then(value => console.log(value));
 ```
 
-Saving context-scoped state: 
+Saving context-scoped storage: 
 
 ```javascript
     const cardId = 5;
 
     const { dpapp } = this.props;    
-    dpapp.state.setEntityState('linked-card', cardId).then(savedValue => console.log(savedValue));
+    dpapp.storage.setEntityStorage('linked-card', cardId).then(savedValue => console.log(savedValue));
 ```
 
-Reading application-scoped state:
+Reading application-scoped storage:
 
 ```javascript
     const { dpapp } = this.props;    
-    dpapp.state.getEntityState('app-settings').then(value => console.log(value));
+    dpapp.storage.getEntityStorage('app-settings').then(value => console.log(value));
 ```    
     
 
