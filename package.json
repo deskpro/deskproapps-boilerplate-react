@@ -41,7 +41,13 @@
     "deskproApiTags": [],
     "externalApis": []
   },
+  "dependencies": {
+    "@deskproapps/deskproapps-sdk-react": "^1.0.0-beta.5",
+    "deskpro-components": "^0.5.11"
+  },
   "devDependencies": {
-    "react-test-renderer": "^15.6.1"
+    "file-loader": "^0.11.2",
+    "react-test-renderer": "^15.6.1",
+    "url-loader": "^0.5.9"
   }
 }
